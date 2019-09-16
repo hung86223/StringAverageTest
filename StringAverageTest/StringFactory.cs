@@ -45,8 +45,14 @@ namespace StringAverageTest
                 _numberAns += _stringToNumber[number];
             }
 
-            _answer = _numberDictionary[_numberAns];
+            ;
+            _answer = _numberDictionary[GetFirstDigitNum()];
             return QuestionIsEmpty(question) ? "N/A" :_answer ;
+        }
+
+        private int GetFirstDigitNum()
+        {
+            return  _numberAns %= 10;
         }
 
         private static bool QuestionIsEmpty(string question)
