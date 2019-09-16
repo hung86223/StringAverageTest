@@ -22,5 +22,13 @@ namespace StringAverageTest
 
             Assert.AreEqual("one", actual);
         }
+
+        [TestMethod]
+        public void give_one_string_include_two_numbers_get_parsing()
+        {
+            var actual = _stringFactory.AverageString("one");
+
+            Assert.AreEqual("one", actual);
+        }
     }
 }

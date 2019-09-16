@@ -2,9 +2,17 @@
 {
     public class StringFactory
     {
+        private string _answer = "";
+
         public string AverageString(string question)
         {
-            return "N/A";
+            _answer = question;
+            return QuestionIsEmpty(question) ? "N/A" :_answer ;
+        }
+
+        private static bool QuestionIsEmpty(string question)
+        {
+            return question.Equals("");
         }
     }
 }
