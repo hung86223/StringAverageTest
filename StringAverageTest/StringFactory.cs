@@ -2,7 +2,7 @@
 {
     public class StringFactory
     {
-        public string AverageString()
+        public string AverageString(string question)
         {
             return "N/A";
         }

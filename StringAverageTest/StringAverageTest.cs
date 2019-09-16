@@ -11,14 +11,14 @@ namespace StringAverageTest
         [TestMethod]
         public void give_Empty_String_Get_NA()
         {
-            var actual = _stringFactory.AverageString();
+            var actual = _stringFactory.AverageString("");
 
             Assert.AreEqual("N/A",actual);
         }
         [TestMethod]
         public void give_One_Get_One()
         {
-            var actual = _stringFactory.AverageString();
+            var actual = _stringFactory.AverageString("one");
 
             Assert.AreEqual("one", actual);
         }
