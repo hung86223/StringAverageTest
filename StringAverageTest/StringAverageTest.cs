@@ -26,9 +26,9 @@ namespace StringAverageTest
         [TestMethod]
         public void give_one_string_include_two_numbers_get_parsing()
         {
-            var actual = _stringFactory.AverageString("one");
+            var actual = _stringFactory.AverageString("one two");
 
-            Assert.AreEqual("one", actual);
+            Assert.AreEqual("three", actual);
         }
     }
 }
