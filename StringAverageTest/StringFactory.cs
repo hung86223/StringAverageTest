@@ -36,13 +36,14 @@ namespace StringAverageTest
 
 
         private int _numberAns;
+        private int _count;
 
         public string AverageString(string question)
         {
             var numbers = question.Split(' ');
-            var count = 0;
             foreach (var number in numbers)
             {
+                _count++;
                 _numberAns += _stringToNumber[number];
             }
 
@@ -52,7 +53,7 @@ namespace StringAverageTest
 
         private int GetFirstDigitNum()
         {
-            return  _numberAns %= 10;
+            return  _numberAns /= _count;
         }
 
         private static bool QuestionIsEmpty(string question)
