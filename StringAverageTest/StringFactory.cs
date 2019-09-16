@@ -40,12 +40,12 @@ namespace StringAverageTest
         public string AverageString(string question)
         {
             var numbers = question.Split(' ');
+            var count = 0;
             foreach (var number in numbers)
             {
                 _numberAns += _stringToNumber[number];
             }
 
-            ;
             _answer = _numberDictionary[GetFirstDigitNum()];
             return QuestionIsEmpty(question) ? "N/A" :_answer ;
         }
