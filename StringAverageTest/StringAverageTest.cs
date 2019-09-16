@@ -24,11 +24,19 @@ namespace StringAverageTest
         }
 
         [TestMethod]
-        public void give_one_string_include_three_numbers_which_parsing_more_than_nine_get_a_average_number()
+        public void give_one_string_include_three_numbers_get_a_average_number()
         {
             var actual = _stringFactory.AverageString("nine five two");
 
             Assert.AreEqual("five", actual);
+        }
+
+        [TestMethod]
+        public void give_zero_zero_get_zero()
+        {
+            var actual = _stringFactory.AverageString("zero zero");
+
+            Assert.AreEqual("zero", actual);
         }
     }
 }
