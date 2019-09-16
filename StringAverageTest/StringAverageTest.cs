@@ -30,5 +30,13 @@ namespace StringAverageTest
 
             Assert.AreEqual("three", actual);
         }
+
+        [TestMethod]
+        public void give_one_string_include_three_numbers_which_parsing_more_than_nine_get_a_digit_number()
+        {
+            var actual = _stringFactory.AverageString("nine five two");
+
+            Assert.AreEqual("six", actual);
+        }
     }
 }
