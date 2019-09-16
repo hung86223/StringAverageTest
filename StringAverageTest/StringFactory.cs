@@ -40,23 +40,31 @@ namespace StringAverageTest
 
         public string AverageString(string question)
         {
+            ParseNumber(question);
+            GetAverageNum();
+            _answer = _numberDictionary[_numberAns];
+            return StringIsEmpty(question) ? "N/A" :_answer ;
+        }
+
+        private void ParseNumber(string question)
+        {
             var numbers = question.Split(' ');
             foreach (var number in numbers)
             {
                 _count++;
-                _numberAns += _stringToNumber[number];
+                if (!StringIsEmpty(number))
+                {
+                    _numberAns += _stringToNumber[number];
+                }
             }
-
-            _answer = _numberDictionary[GetFirstDigitNum()];
-            return QuestionIsEmpty(question) ? "N/A" :_answer ;
         }
 
-        private int GetFirstDigitNum()
+        private void GetAverageNum()
         {
-            return  _numberAns /= _count;
+            _numberAns /= _count;
         }
 
-        private static bool QuestionIsEmpty(string question)
+        private static bool StringIsEmpty(string question)
         {
             return question.Equals("");
         }
